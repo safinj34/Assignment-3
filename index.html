@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>      
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -102,7 +103,7 @@
 </div>
 
 
-<div class="flex flex-row justify-around px-20 mx-20 gap-20 max-sm:flex-col max-sm:mx-0 max-sm:px-5">
+<div class="flex flex-row justify-around px-20 mx-20 gap-20 max-sm:flex-col max-sm:mx-0 max-sm:px-5 my-10">
 
 
 
@@ -159,7 +160,7 @@
 
 
 
-<div class="flex  mx-20 p-10 border rounded-lg max-sm:mx-3 max-sm:p-3 max-sm:flex-col  ">
+<div class="flex  mx-20 p-10 border rounded-lg max-sm:mx-3 max-sm:p-3 max-sm:flex-col ">
 
 <div class="flex flex-row  max-sm:flex-col max-sm:items-center max-sm:justify-center">
 <div><img src="assets/img1.png" alt=""></div>
@@ -174,20 +175,20 @@
 
 
 
-<div class="flex  mx-20 my-10 max-sm:mx-3 max-sm:p-3 max-sm:flex-col">
+<div class="flex  mx-20 my-10 max-sm:mx-3 max-sm:p-3 max-sm:flex-col ">
 
-<div class="flex "><div class="flex gap-20 max-sm:mx-3 max-sm:p-3 max-sm:flex-col max-sm:3 "><img class="p-1 border rounded-lg" src="assets/img3.png" alt="">
-    <div class="flex flex-row items-center p-1 border rounded-lg max-sm:flex-col">
+<div class="flex"><div class="flex gap-20 max-sm:mx-3 max-sm:p-3 max-sm:flex-col max-sm:3"><img class="p-1 border rounded-lg " src="assets/img3.png" alt="">
+    <div class="flex flex-row items-center p-1 border rounded-lg max-sm:flex-col ">
         <div><img src="assets/img4.png" alt=""></div>
         <div class="items center p-2">
         <div class=" font-black manrope-font text-2xl p-2"><p>Commercial</p></div>
         <div class="manrope-font p-2"><p>The barn house captivates with its blend of rustic charm and modern. The barn house captivates with its blend of rustic charm and modern .</p></div>
-        <div class="flex"><div class="flex gap-5 p-2"><p class="font-black manrope-font font-xl">View Details</p><i id="icon" class="fa-solid fa-arrow-right rounded-full bg-lime-500 items-center justify-items-center p-1.5"></i></div> </div></div></div>
+        <div class="flex "><div class="flex gap-5 p-2"><p class="font-black manrope-font font-xl">View Details</p><i id="icon" class="fa-solid fa-arrow-right rounded-full bg-lime-500 items-center justify-items-center p-1.5"></i></div> </div></div></div>
     <div></div>
     
     </div></div>
 
-    <div class="items-center flex p-1 border rounded-lg max-sm:items-center max-sm:justify-center"><img src="assets/img5.png" alt=""></div>
+    <div class="items-center flex p-1 border rounded-lg max-sm:items-center max-sm:justify-center "><img src="assets/img5.png" alt=""></div>
 
 
 
@@ -200,6 +201,43 @@
 </div>
 
     </section>
+
+
+
+<section>
+
+<div class="relative">
+
+    <div class="absolute m-4 max-sm:w-48"><img src="assets/icon.webp" alt=""></div>
+
+
+
+    <div
+    class="hero min-h-screen"
+    style="background-image: url(assets/bg.jpeg);">
+    <div class="hero-overlay bg-opacity-60"></div>
+    <div class="hero-content text-neutral-content text-center">
+      <div class="max-w-md">
+        <h1 class="mb-5 text-5xl font-bold">Challenge Section</h1>
+        <p class="mb-5">
+          Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
+          quasi. In deleniti eaque aut repudiandae et a id nisi.
+        </p>
+        <button id="confettiButton" class="btn btn-primary">Click Me Fast And See The Magic</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</section>
+
+
 
 
 
@@ -282,6 +320,42 @@
     </div> 
 
 </footer>
+
+
+<script>
+    const defaults = {
+      spread: 360,
+      ticks: 100,
+      gravity: 0,
+      decay: 0.94,
+      startVelocity: 30,
+      shapes: ["heart"],
+      colors: ["#FFC0CB", "#FF69B4", "#FF1493", "#C71585"],
+    };
+
+    function triggerConfetti() {
+      confetti({
+        ...defaults,
+        particleCount: 50,
+        scalar: 2,
+      });
+
+      confetti({
+        ...defaults,
+        particleCount: 25,
+        scalar: 3,
+      });
+
+      confetti({
+        ...defaults,
+        particleCount: 10,
+        scalar: 4,
+      });
+    }
+
+
+    document.getElementById('confettiButton').addEventListener('click', triggerConfetti);
+  </script>
 
 
 </body>
